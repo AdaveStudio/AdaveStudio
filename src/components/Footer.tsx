@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Instagram, Github, Sparkles, ArrowUp } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Github, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const links = {
@@ -28,7 +28,7 @@ const itemVariants = {
 };
 
 export default function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  // const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <footer className="bg-[#080808] border-t border-white/5">
@@ -141,13 +141,13 @@ export default function Footer() {
           <p className="text-xs text-[#555] order-2 md:order-1">
             © {new Date().getFullYear()} Adave Studio. All rights reserved. Crafted with ❤️ for the web.
           </p>
-          <button
+          {/* <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
             className="order-1 md:order-2 w-10 h-10 rounded-lg bg-brand-surface border border-white/10 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-black hover:border-brand-green transition-all duration-300 group"
           >
             <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </footer>
