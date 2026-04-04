@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const contactDetails = [
-  { icon: Mail, label: 'Email Us', value: 'hello@adavestudio.com', href: 'mailto:hello@adavestudio.com' },
-  { icon: Phone, label: 'Call Us', value: '+1 (555) 000-0000', href: 'tel:+15550000000' },
+  { icon: Mail, label: 'Email Us', value: 'adavestudio1@gmail.com', href: 'mailto:adavestudio1@gmail.com' },
+  { icon: Phone, label: 'Call Us', value: '+234 09077137226', href: 'tel:+2349077137226' },
   { icon: MapPin, label: 'Our Office', value: 'Global / Remote Friendly', href: '#' },
   { icon: Clock, label: 'Working Hours', value: 'Mon–Fri  9am – 6pm', href: '#' },
   { icon: Globe, label: 'Global Reach', value: 'Serving 40+ Countries', href: '#' },
@@ -25,12 +25,36 @@ const itemVariants = {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', service: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('sent');
-    setTimeout(() => setStatus('idle'), 4000);
+    setStatus('sending');
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      formData.append("access_key", "635fad67-464d-46a2-b2ed-d241b42f6b43");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', service: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -80,18 +104,10 @@ export default function Contact() {
                 </div>
               </motion.a>
             ))}
-
-
           </motion.div>
 
           {/* Right — Form */}
-          <motion.div
-            // initial={{ opacity: 0, x: 30 }}
-            // whileInView={{ opacity: 1, x: 0 }}
-            // viewport={{ once: true, margin: "-100px" }}
-            // transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="lg:col-span-3"
-          >
+          <motion.div className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
               className="bg-white border border-black/10 rounded-xl p-3 lg:p-10 shadow-sm"
@@ -104,6 +120,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="contact-name"
+                    name="name"
                     type="text"
                     required
                     placeholder="John Doe"
@@ -118,6 +135,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="contact-email"
+                    name="email"
                     type="email"
                     required
                     placeholder="john@example.com"
@@ -134,6 +152,7 @@ export default function Contact() {
                 </label>
                 <select
                   id="contact-service"
+                  name="service"
                   value={form.service}
                   onChange={(e) => setForm({ ...form, service: e.target.value })}
                   className="bg-gray-50 border border-black/10 rounded-sm px-4 py-3 text-sm text-black focus:border-brand-green focus:ring-1 focus:ring-brand-green focus:outline-none transition-all appearance-none"
@@ -153,6 +172,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
                   required
                   rows={5}
                   placeholder="Tell us about your project..."
@@ -164,9 +184,23 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="btn-primary w-full justify-center py-4 text-sm hover:!bg-black hover:!text-white"
+                disabled={status === 'sending'}
+                className={`btn-primary w-full justify-center py-4 text-sm transition-all duration-300 ${
+                  status === 'success' ? 'bg-brand-green! text-black!' : 
+                  status === 'error' ? 'bg-red-500! text-white!' : 
+                  'hover:bg-black! hover:text-white!'
+                } ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                {status === 'sent' ? '✓ Message Sent!' : (
+                {status === 'sending' ? (
+                  <span className="flex items-center gap-2">
+                    <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></span>
+                    Sending...
+                  </span>
+                ) : status === 'success' ? (
+                  '✓ Sent Successfully!'
+                ) : status === 'error' ? (
+                  'Error! Try Again'
+                ) : (
                   <><Send size={16} /> Send Message</>
                 )}
               </button>
@@ -178,7 +212,7 @@ export default function Contact() {
           <h3 className="text-black font-extrabold text-lg mb-2">Free Consultation</h3>
           <p className="text-black/70 text-sm mb-4">Book a 30-minute strategy session with our team at no cost.</p>
           <a
-            href="mailto:hello@adavestudio.com"
+            href="mailto:adavestudio1@gmail.com"
             className="inline-flex items-center gap-2 bg-black text-white font-bold text-sm px-5 py-3 rounded-sm hover:bg-brand-dark transition-colors"
           >
             Book Now <Send size={14} />
