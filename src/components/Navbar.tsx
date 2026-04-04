@@ -15,6 +15,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const shouldReduceMotion = useReducedMotion();
 
   // Highlighted Crazy Animation Variants
@@ -74,6 +75,32 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Intersection Observer for Active Section
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    navLinks.forEach((link) => {
+      const section = document.querySelector(link.href);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   // Prevent background scrolling when menu is open
   useEffect(() => {
     if (open) {
@@ -113,17 +140,24 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Nav */}
-            <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-medium text-[#aaa] hover:text-brand-green transition-colors duration-300 relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-green group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
+            <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.slice(1);
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`text-sm font-medium transition-colors duration-300 relative group ${
+                      isActive ? 'text-brand-green' : 'text-[#aaa] hover:text-brand-green'
+                    }`}
+                  >
+                    {link.label}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-green transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
+                  </a>
+                );
+              })}
             </nav>
 
             {/* CTA */}
@@ -193,30 +227,39 @@ export default function Navbar() {
               <div className="absolute bottom-1/4 -left-32 w-64 h-64 bg-white rounded-full blur-[140px] opacity-[0.03] pointer-events-none -z-10" />
 
               <ul className="flex flex-col gap-8 z-10 relative">
-                {navLinks.map((link, idx) => (
-                  <motion.li
-                    key={link.label}
-                    custom={idx}
-                    variants={activeItemVariants}
-                    className="overflow-hidden"
-                  >
-                    <a
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="group flex flex-col gap-1 py-1 transition-all duration-300"
+                {navLinks.map((link, idx) => {
+                  const isActive = activeSection === link.href.slice(1);
+                  return (
+                    <motion.li
+                      key={link.label}
+                      custom={idx}
+                      variants={activeItemVariants}
+                      className="overflow-hidden"
                     >
-                      <div className="flex items-baseline gap-4">
-                        <span className="text-xs font-black text-(--accent) opacity-40 tabular-nums">
-                          0{idx + 1}
-                        </span>
-                        <span className="text-2xl sm:text-6xl font-black text-white hover:text-(--accent) transition-colors duration-500">
-                          {link.label}
-                        </span>
-                        <ArrowRight size={32} className="text-(--accent) opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden sm:block" />
-                      </div>
-                    </a>
-                  </motion.li>
-                ))}
+                      <a
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="group flex flex-col gap-1 py-1 transition-all duration-300"
+                      >
+                        <div className="flex items-baseline gap-4">
+                          <span className={`text-xs font-black tabular-nums transition-colors ${
+                            isActive ? 'text-(--accent) opacity-100' : 'text-(--accent) opacity-40'
+                          }`}>
+                            0{idx + 1}
+                          </span>
+                          <span className={`text-2xl sm:text-6xl font-black transition-colors duration-500 ${
+                            isActive ? 'text-brand-green' : 'text-white hover:text-brand-green'
+                          }`}>
+                            {link.label}
+                          </span>
+                          <ArrowRight size={32} className={`text-brand-green transition-all duration-500 hidden sm:block ${
+                            isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                          }`} />
+                        </div>
+                      </a>
+                    </motion.li>
+                  );
+                })}
               </ul>
 
               <div className="mt-auto pt-24 space-y-12 z-10 relative">
@@ -271,3 +314,4 @@ export default function Navbar() {
     </>
   );
 }
+

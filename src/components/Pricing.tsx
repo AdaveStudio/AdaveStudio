@@ -99,11 +99,11 @@ export default function Pricing() {
                 : 'bg-brand-surface border-white/5 text-white hover:border-brand-green/30'
                 }`}
             >
-              {plan.highlighted && (
-                <div className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full flex items-center gap-1.5 shadow-xl">
+              {/* {plan.highlighted && (
+                <div className="absolute top-0 right-[50%] -translate-y-1/2 px-4 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full flex items-center gap-1.5 shadow-xl">
                   <Sparkles size={10} className="text-brand-green" /> Most Popular
                 </div>
-              )}
+              )} */}
 
               <div className="mb-8">
                 <h3 className={`text-xl font-bold mb-2 ${plan.highlighted ? 'text-black' : 'text-white'}`}>

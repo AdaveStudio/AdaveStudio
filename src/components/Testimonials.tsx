@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'Sarah Mitchell',
-    role: 'CEO, TechVentures Inc.',
-    avatar: '/images/testimonial-user.png',
+    name: 'Zayd Tahir',
+    role: 'CEO, StudyLite.ai',
+    avatar: '/images/Zayd2.png',
     rating: 5,
     text: "Adave Studio completely transformed our digital presence. Their team delivered a world-class product that tripled our conversion rate within the first month. Absolutely incredible work ethic and talent.",
   },
