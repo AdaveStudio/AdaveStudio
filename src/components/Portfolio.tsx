@@ -7,35 +7,39 @@ const categories = ['All', 'Web Design', 'Branding', 'Development', 'Marketing']
 const projects = [
   {
     id: 1,
-    title: 'Aether Platform',
-    category: 'Development',
-    image: '/images/project-1.png',
-    desc: 'Next-generation SaaS dashboard with real-time analytics.',
-    tags: ['React', 'TypeScript'],
+    title: 'Tech On Demand',
+    category: 'Web Design',
+    image: '/images/Techondemand.png',
+    desc: 'A modern, responsive web design for Tech On Demand, a leading provider of technology solutions.',
+    link: 'https://tech-on-demand.vercel.app/',
+    tags: ['React', 'TypeScript', 'Tailwind'],
   },
   {
     id: 2,
-    title: 'Neural Brand Identity',
-    category: 'Branding',
-    image: '/images/project-2.png',
-    desc: 'Complete visual identity for an AI startup from zero.',
-    tags: ['Branding', 'Strategy'],
+    title: 'FootFlex',
+    category: 'Web Design',
+    image: '/images/Footflex.png',
+    desc: 'A modern, responsive web design for FootFlex, a leading provider of footwear solutions.',
+    link: 'https://footflexng.com/',
+    tags: ['React', 'TypeScript', 'Tailwind'],
   },
   {
     id: 3,
-    title: 'Lumina Web Design',
+    title: 'LucemMaritime',
     category: 'Web Design',
-    image: '/images/project-1.png',
-    desc: 'Conversion-focused website for a luxury real estate firm.',
-    tags: ['Figma', 'UX'],
+    image: '/images/LucemMaritime.png',
+    desc: 'A modern, responsive web design for LucemMaritime, a leading provider of maritime solutions.',
+    link: 'https://www.lucemglobal.com/',
+    tags: ['React', 'TypeScript', 'Tailwind'],
   },
   {
     id: 4,
-    title: 'Titan Marketing',
+    title: 'Neural Brand Identity',
     category: 'Marketing',
     image: '/images/project-2.png',
-    desc: 'Full-funnel digital marketing that tripled leads in 90 days.',
-    tags: ['SEO', 'PPC'],
+    desc: 'A modern, responsive web design for Neural Brand Identity, a leading provider of AI solutions.',
+    link: 'https://neuralbrandidentity.com/',
+    tags: ['React', 'TypeScript', 'Tailwind'],
   },
   {
     id: 5,
@@ -43,14 +47,16 @@ const projects = [
     category: 'Development',
     image: '/images/project-1.png',
     desc: 'High-converting e-commerce platform with seamless UX.',
+    link: 'https://zenithecommerce.com',
     tags: ['Next.js', 'Stripe'],
   },
   {
     id: 6,
     title: 'Flux Creative',
-    category: 'Web Design',
+    category: 'Branding',
     image: '/images/project-2.png',
     desc: 'Portfolio site for a global creative director.',
+    link: 'https://fluxcreative.com',
     tags: ['Design', 'Motion'],
   },
 ];
@@ -142,12 +148,13 @@ export default function Portfolio() {
                 key={project.id}
                 className="card-dark overflow-hidden group"
               >
+                {/* <a href={project.link} target="_blank" rel="noopener noreferrer"></a> */}
                 {/* Image */}
-                <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden">
+                <div className="relative bg-brand-surface overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
                       const t = e.currentTarget;
                       t.style.display = 'none';
@@ -163,7 +170,8 @@ export default function Portfolio() {
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <a
-                      href="#portfolio"
+                      href={project.link}
+                      target='_blank'
                       className="btn-primary py-3 px-5 text-sm"
                       aria-label={`View ${project.title} project`}
                     >
