@@ -100,9 +100,9 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-10 h-10 rounded-lg bg-brand-surface border border-white/10 flex items-center justify-center text-[#aaa] hover:bg-brand-green hover:text-black hover:border-brand-green transition-all duration-300"
+                  className="w-5 h-5 rounded-lg bg-brand-surface border border-white/10 flex items-center justify-center text-[#aaa] hover:bg-brand-green hover:text-black hover:border-brand-green transition-all duration-300"
                 >
-                  <Icon size={16} />
+                  <Icon size={10} />
                 </a>
               ))}
             </div>
