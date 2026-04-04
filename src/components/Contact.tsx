@@ -94,7 +94,7 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white border border-black/10 rounded-xl p-8 lg:p-10 shadow-sm"
+              className="bg-white border border-black/10 rounded-xl p-3 lg:p-10 shadow-sm"
               aria-label="Contact form"
             >
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
