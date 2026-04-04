@@ -38,12 +38,12 @@ export default function Hero() {
               High-end strategy meets precision execution.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-5">
+            <div className="flex max-md:flex-col justify-center lg:justify-start gap-5">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center gap-2 px-8 py-4 bg-brand-green text-black font-bold rounded-full transition-shadow hover:shadow-[0_0_20px_rgba(163,255,0,0.4)]"
+                className="btn-primary flex items-center gap-2 px-10 py-3 bg-brand-green text-black font-bold rounded-full transition-shadow hover:shadow-[0_0_20px_rgba(163,255,0,0.4)]"
               >
                 Get Started <ArrowRight size={18} />
               </motion.a>
@@ -51,7 +51,7 @@ export default function Hero() {
               <motion.a
                 href="#portfolio"
                 whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
-                className="px-8 py-4 border border-white/20 text-white font-bold rounded-full transition-all"
+                className="px-10 py-3 border border-white/20 text-white font-bold rounded-full transition-all"
               >
                 View Work
               </motion.a>

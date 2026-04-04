@@ -33,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#080808] border-t border-white/5">
       {/* Newsletter Banner */}
-      <div className="bg-brand-dark border-b border-white/5">
+      <div className="bg-brand-dark border-b hidden md:block border-white/5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

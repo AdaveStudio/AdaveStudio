@@ -9,7 +9,7 @@ const stats = [
 export default function About() {
   return (
     <section id="about" className="section-padding bg-white text-black overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
 
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-16">

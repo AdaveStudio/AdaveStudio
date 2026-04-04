@@ -78,9 +78,9 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="section-padding bg-brand-black">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -97,13 +97,13 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Filters */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-16" 
-          role="tablist" 
+          className="flex flex-wrap justify-center gap-4 mb-16"
+          role="tablist"
           aria-label="Portfolio filter"
         >
           {categories.map((cat) => (
@@ -112,11 +112,10 @@ export default function Portfolio() {
               role="tab"
               aria-selected={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-sm text-sm font-semibold transition-all duration-300 border ${
-                activeCategory === cat
-                  ? 'bg-brand-green text-black border-brand-green'
-                  : 'bg-transparent text-[#aaa] border-white/15 hover:border-brand-green hover:text-brand-green'
-              }`}
+              className={`px-5 py-2 rounded-sm text-sm font-semibold transition-all duration-300 border ${activeCategory === cat
+                ? 'bg-brand-green text-black border-brand-green'
+                : 'bg-transparent text-[#aaa] border-white/15 hover:border-brand-green hover:text-brand-green'
+                }`}
             >
               {cat}
             </button>
@@ -124,7 +123,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Grid */}
-        <motion.div 
+        <motion.div
           layout
           variants={containerVariants}
           initial="hidden"

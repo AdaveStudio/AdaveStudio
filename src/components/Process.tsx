@@ -40,9 +40,9 @@ const itemVariants = {
 export default function Process() {
   return (
     <section id="process" className="section-padding bg-gray-50 text-black">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -66,7 +66,7 @@ export default function Process() {
         </motion.div>
 
         {/* Steps Grid */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -100,7 +100,7 @@ export default function Process() {
         </motion.div>
 
         {/* Bottom Banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
