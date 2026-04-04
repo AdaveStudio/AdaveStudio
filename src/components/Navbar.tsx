@@ -129,14 +129,14 @@ export default function Navbar() {
               <div className="relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-(--accent) blur-md opacity-20 group-hover:opacity-70 transition-opacity duration-500 rounded-full pointer-events-none"></div>
                 <img
-                  src="/AdaveLogo.png"
+                  src="/AdaveLogo2.png"
                   alt="Adave Studio"
-                  className="w-4 h-8 md:w-5 md:h-10 object-contain relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out"
+                  className="w-10 h-10 md:w-15 md:scale-200 scale-110 object-contain relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out"
                 />
               </div>
-              <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
+              {/* <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
                 Adave<span className="text-(--accent) group-hover:text-white transition-colors duration-300">.</span>
-              </span>
+              </span> */}
             </a>
 
             {/* Desktop Nav */}
@@ -147,14 +147,12 @@ export default function Navbar() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`text-sm font-medium transition-colors duration-300 relative group ${
-                      isActive ? 'text-brand-green' : 'text-[#aaa] hover:text-brand-green'
-                    }`}
+                    className={`text-sm font-medium transition-colors duration-300 relative group ${isActive ? 'text-brand-green' : 'text-[#aaa] hover:text-brand-green'
+                      }`}
                   >
                     {link.label}
-                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-green transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-green transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`} />
                   </a>
                 );
               })}
@@ -242,19 +240,16 @@ export default function Navbar() {
                         className="group flex flex-col gap-1 py-1 transition-all duration-300"
                       >
                         <div className="flex items-baseline gap-4">
-                          <span className={`text-xs font-black tabular-nums transition-colors ${
-                            isActive ? 'text-(--accent) opacity-100' : 'text-(--accent) opacity-40'
-                          }`}>
+                          <span className={`text-xs font-black tabular-nums transition-colors ${isActive ? 'text-(--accent) opacity-100' : 'text-(--accent) opacity-40'
+                            }`}>
                             0{idx + 1}
                           </span>
-                          <span className={`text-2xl sm:text-6xl font-black transition-colors duration-500 ${
-                            isActive ? 'text-brand-green' : 'text-white hover:text-brand-green'
-                          }`}>
+                          <span className={`text-2xl sm:text-6xl font-black transition-colors duration-500 ${isActive ? 'text-brand-green' : 'text-white hover:text-brand-green'
+                            }`}>
                             {link.label}
                           </span>
-                          <ArrowRight size={32} className={`text-brand-green transition-all duration-500 hidden sm:block ${
-                            isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-                          }`} />
+                          <ArrowRight size={32} className={`text-brand-green transition-all duration-500 hidden sm:block ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                            }`} />
                         </div>
                       </a>
                     </motion.li>
