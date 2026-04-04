@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const plans = [
