@@ -77,7 +77,7 @@ export default function Services() {
             <motion.article
               variants={itemVariants}
               key={service.number}
-              className="card-light p-8 group cursor-pointer"
+              className="card-light md:p-8 p-4 group cursor-pointer"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="number-badge">{service.number}</div>

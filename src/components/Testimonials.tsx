@@ -84,7 +84,7 @@ export default function Testimonials() {
             <motion.article
               variants={itemVariants}
               key={t.name}
-              className={`card-light relative p-8 flex flex-col pt-12 overflow-hidden ${i === 1 ? 'bg-black text-white border-black' : ''}`}
+              className={`card-light relative md:p-8 p-4 flex flex-col pt-12 overflow-hidden ${i === 1 ? 'bg-black text-white border-black' : ''}`}
             >
               {i === 1 && (
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/10 rounded-bl-full pointer-events-none" />

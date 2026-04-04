@@ -181,7 +181,7 @@ export default function Navbar() {
             className="lg:hidden fixed top-0 right-0 bottom-0 w-full sm:w-[500px] bg-[#0a0a0a] z-40 overflow-y-auto overflow-x-hidden border-l border-white/5 shadow-[-32px_0_64px_rgba(0,0,0,0.5)] flex flex-col"
             style={{ willChange: 'transform' }}
           >
-            <nav aria-label="Mobile navigation" className="flex flex-col p-8 pt-32 min-h-full relative overflow-hidden flex-1">
+            <nav aria-label="Mobile navigation" className="flex flex-col md:p-8 p-4 pt-32 min-h-full relative flex-1">
 
               {/* Massive Watermark */}
               <div className="absolute top-1/2 -translate-y-1/2 left-0 pointer-events-none opacity-[0.02] transform -rotate-90 origin-left">
@@ -209,7 +209,7 @@ export default function Navbar() {
                         <span className="text-xs font-black text-(--accent) opacity-40 tabular-nums">
                           0{idx + 1}
                         </span>
-                        <span className="text-5xl sm:text-6xl font-black text-white hover:text-(--accent) transition-colors duration-500">
+                        <span className="text-2xl sm:text-6xl font-black text-white hover:text-(--accent) transition-colors duration-500">
                           {link.label}
                         </span>
                         <ArrowRight size={32} className="text-(--accent) opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden sm:block" />
@@ -226,7 +226,7 @@ export default function Navbar() {
                   <a
                     href="#contact"
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between p-6 bg-white/[0.03] border border-white/10 rounded-2xl group hover:bg-(--accent) transition-all duration-500"
+                    className="flex items-center justify-between p-4 bg-white/[0.03] border border-white/10 rounded-2xl group hover:bg-(--accent) transition-all duration-500"
                   >
                     <span className="text-xl font-bold group-hover:text-black transition-colors">Let's build something</span>
                     <span className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-black/10 transition-colors">
@@ -250,7 +250,7 @@ export default function Navbar() {
                         { icon: Instagram, href: '#' },
                         { icon: Github, href: '#' }
                       ].map((social, i) => (
-                        <a key={i} href={social.href} className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/50 hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all duration-300">
+                        <a key={i} href={social.href} className="w-5 h-5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/50 hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all duration-300">
                           <social.icon size={18} />
                         </a>
                       ))}

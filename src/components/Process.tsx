@@ -77,7 +77,7 @@ export default function Process() {
             <motion.article
               variants={itemVariants}
               key={step.number}
-              className="relative card-light p-7 group"
+              className="relative card-light md:p-7 p-4 group"
             >
               {/* Connector line for large screens */}
               {idx < steps.length - 1 && (
@@ -104,7 +104,7 @@ export default function Process() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-xl bg-brand-green p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6"
+          className="mt-16 rounded-xl bg-brand-green md:p-8 p-4 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6"
         >
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-black mb-2">

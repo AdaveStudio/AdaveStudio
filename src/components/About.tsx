@@ -73,7 +73,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="card-accent-light p-8 flex flex-col justify-between"
+              className="card-accent-light md:p-6 p-4 flex flex-col justify-between"
             >
               <div>
                 <h3 className="text-2xl font-bold mb-4">Ad Campaign Strategies</h3>
@@ -93,7 +93,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="card-muted-light p-8 flex flex-col justify-between"
+              className="card-muted-light md:p-6 p-4 flex flex-col justify-between"
             >
               <div>
                 <h3 className="text-2xl font-bold mb-4">Content Strategy</h3>
@@ -113,7 +113,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="card-muted-light p-8 md:col-span-2 flex flex-col md:flex-row justify-between items-start md:items-end gap-8"
+              className="card-muted-light md:p-6 p-4 md:col-span-2 flex flex-col md:flex-row justify-between items-start md:items-end gap-8"
             >
               <div className="max-w-xl">
                 <h3 className="text-2xl font-bold mb-4">Business Scaling</h3>

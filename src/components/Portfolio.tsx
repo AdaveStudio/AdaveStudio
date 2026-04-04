@@ -88,7 +88,7 @@ export default function Portfolio() {
           className="text-center mb-16"
         >
           <div className="section-tag justify-center">Our Work</div>
-          <h2 className="text-4xl sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
+          <h2 className="text-4xl sm:text-4xl lg:text-7xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
             Our Recent <span className="text-brand-green">Work Showcase</span>
           </h2>
           <p className="text-[#aaa] max-w-xl mx-auto text-lg">
@@ -112,7 +112,7 @@ export default function Portfolio() {
               role="tab"
               aria-selected={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-sm text-sm font-semibold transition-all duration-300 border ${activeCategory === cat
+              className={`md:px-5 px-2 py-1 rounded-sm text-sm font-semibold transition-all duration-300 border ${activeCategory === cat
                 ? 'bg-brand-green text-black border-brand-green'
                 : 'bg-transparent text-[#aaa] border-white/15 hover:border-brand-green hover:text-brand-green'
                 }`}
