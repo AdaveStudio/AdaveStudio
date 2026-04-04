@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Instagram, Github, ArrowUp, Sparkles } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Github, Sparkles, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const links = {
@@ -136,18 +136,18 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-[1440px] mx-auto px-6 lg:px-8 py-6 text-center"
+          className="max-w-[1440px] mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
         >
-          <p className="text-xs text-[#555]">
+          <p className="text-xs text-[#555] order-2 md:order-1">
             © {new Date().getFullYear()} Adave Studio. All rights reserved. Crafted with ❤️ for the web.
           </p>
-          {/* <button
+          <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="w-10 h-10 rounded-lg bg-brand-surface border border-white/10 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-black hover:border-brand-green transition-all duration-300"
+            className="order-1 md:order-2 w-10 h-10 rounded-lg bg-brand-surface border border-white/10 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-black hover:border-brand-green transition-all duration-300 group"
           >
-            <ArrowUp size={16} />
-          </button> */}
+            <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+          </button>
         </motion.div>
       </div>
     </footer>
