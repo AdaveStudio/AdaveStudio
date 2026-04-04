@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: 'Jafar Abass',
     role: 'Founder, Sparkcode',
-    avatar: '../../images/Jafar.jpeg',
+    avatar: '/images/Jafar.jpeg',
     rating: 5,
     text: "I've worked with many agencies, but Adave Studio stands out for their technical depth and creative thinking. They delivered our SaaS platform 3 weeks ahead of schedule. Remarkable team.",
   },

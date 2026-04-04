@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-green/10 blur-[100px] md:blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-blue-500/5 blur-[80px] md:blur-[100px] rounded-full" />
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8 relative z-10">
+      <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left Content Column */}

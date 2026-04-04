@@ -1,6 +1,7 @@
 import { Twitter, Linkedin, Instagram, Github, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+
 const links = {
   Services: ['Web Development', 'UI/UX Design', 'Brand Strategy', 'Digital Marketing', 'SEO'],
   Company: ['About Us', 'Portfolio', 'Careers'],
@@ -82,11 +83,7 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-3 mb-6 group" aria-label="Adave Studio">
-              <span className="w-8 h-8 bg-brand-green rounded-sm flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </span>
+              <img src="/AdaveStudio3.png" alt="Adave Studio" className="w-8 h-8 object-contain" />
               <span className="text-xl font-extrabold tracking-tight">
                 Adave<span className="text-brand-green">.</span>
               </span>

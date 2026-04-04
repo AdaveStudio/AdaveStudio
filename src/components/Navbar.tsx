@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Twitter, Linkedin, Instagram, Github, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 const navLinks = [
@@ -20,24 +20,20 @@ export default function Navbar() {
   const menuVariants = {
     closed: {
       x: "100%",
-      borderTopLeftRadius: "50%",
-      borderBottomLeftRadius: "50%",
       opacity: 0,
       transition: {
         type: "spring",
-        stiffness: 300,
-        damping: 35,
+        stiffness: 400,
+        damping: 40,
       }
     },
     open: {
       x: "0%",
-      borderTopLeftRadius: "0%",
-      borderBottomLeftRadius: "0%",
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 200,
-        damping: 25,
+        stiffness: 300,
+        damping: 30,
         restDelta: 2
       }
     }
@@ -47,7 +43,7 @@ export default function Navbar() {
     closed: { x: "100%", opacity: 0, transition: { duration: 0.2 } },
     open: { x: "0%", opacity: 1, transition: { duration: 0.3 } }
   };
-  
+
   const activeVariants = shouldReduceMotion ? simpleMenuVariants : menuVariants;
 
   const itemVariants = {
@@ -57,9 +53,9 @@ export default function Navbar() {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 250,
-        damping: 20,
-        delay: 0.1 * idx + 0.1 
+        stiffness: 300,
+        damping: 25,
+        delay: 0.05 * idx + 0.1
       }
     })
   };
@@ -98,78 +94,78 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-panel' : 'bg-transparent'
           }`}
       >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between py-2">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
-            <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 bg-(--accent) blur-md opacity-20 group-hover:opacity-70 transition-opacity duration-500 rounded-full pointer-events-none"></div>
-              <img
-                src="/AdaveLogo.png"
-                alt="Adave Studio"
-                className="w-4 h-8 md:w-5 md:h-10 object-contain relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out"
-              />
-            </div>
-            <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
-              Adave<span className="text-(--accent) group-hover:text-white transition-colors duration-300">.</span>
-            </span>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-[#aaa] hover:text-brand-green transition-colors duration-300 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-green group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a href="#contact" className="btn-primary text-sm py-3 px-8 rounded-full">
-              Get Started
+        <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
+          <div className="flex items-center justify-between py-2">
+            {/* Logo */}
+            <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
+              <div className="relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-(--accent) blur-md opacity-20 group-hover:opacity-70 transition-opacity duration-500 rounded-full pointer-events-none"></div>
+                <img
+                  src="/AdaveLogo.png"
+                  alt="Adave Studio"
+                  className="w-4 h-8 md:w-5 md:h-10 object-contain relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out"
+                />
+              </div>
+              <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
+                Adave<span className="text-(--accent) group-hover:text-white transition-colors duration-300">.</span>
+              </span>
             </a>
-          </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setOpen(!open)}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
-          >
-            <AnimatePresence mode="wait">
-              {open ? (
-                <motion.div key="close" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <X size={26} />
-                </motion.div>
-              ) : (
-                <motion.div key="menu" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <Menu size={26} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+            {/* Desktop Nav */}
+            <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-[#aaa] hover:text-brand-green transition-colors duration-300 relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-green group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a href="#contact" className="btn-primary text-sm py-3 px-8 rounded-full">
+                Get Started
+              </a>
+            </div>
+
+            {/* Mobile toggle */}
+            <button
+              className="lg:hidden text-white p-2"
+              onClick={() => setOpen(!open)}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+            >
+              <AnimatePresence mode="wait">
+                {open ? (
+                  <motion.div key="close" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                    <X size={26} />
+                  </motion.div>
+                ) : (
+                  <motion.div key="menu" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                    <Menu size={26} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
-      </div>
 
       </motion.header>
 
       {/* Mobile Menu Background Overlay */}
       <AnimatePresence>
         {open && (
-           <motion.div
-             initial={{ opacity: 0 }}
-             animate={{ opacity: 1 }}
-             exit={{ opacity: 0 }}
-             onClick={() => setOpen(false)}
-             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden"
-           />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden"
+          />
         )}
       </AnimatePresence>
 
@@ -177,89 +173,96 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-             initial="closed"
-             animate="open"
-             exit="closed"
-             variants={activeVariants}
-             className="lg:hidden fixed top-0 right-0 bottom-0 w-full sm:w-[500px] bg-[#0f0f0f] z-40 overflow-y-auto overflow-x-hidden border-l border-white/5 shadow-[-32px_0_64px_rgba(0,0,0,0.5)] flex flex-col"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={activeVariants}
+            className="lg:hidden fixed top-0 right-0 bottom-0 w-full sm:w-[500px] bg-[#0a0a0a] z-40 overflow-y-auto overflow-x-hidden border-l border-white/5 shadow-[-32px_0_64px_rgba(0,0,0,0.5)] flex flex-col"
+            style={{ willChange: 'transform' }}
           >
-            <nav aria-label="Mobile navigation" className="flex flex-col p-8 pt-24 min-h-full relative overflow-hidden flex-1">
-              
-              {/* Massive Rotated Watermark */}
-              <div className="absolute top-1/2 -translate-y-1/2 -left-[50%] pointer-events-none opacity-[0.03] -rotate-90">
-                <span className="text-[12rem] sm:text-[16rem] font-black tracking-tighter whitespace-nowrap">ADAVE</span>
+            <nav aria-label="Mobile navigation" className="flex flex-col p-8 pt-32 min-h-full relative overflow-hidden flex-1">
+
+              {/* Massive Watermark */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-0 pointer-events-none opacity-[0.02] transform -rotate-90 origin-left">
+                <span className="text-[14rem] font-black tracking-tighter whitespace-nowrap leading-none">STRATEGY</span>
               </div>
 
-              {/* Decorative Background Elements */}
-              {!shouldReduceMotion && (
-                <>
-                  <motion.div 
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: [1, 1.2, 1], opacity: 0.15 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/4 right-0 translate-x-1/2 w-64 h-64 bg-(--accent) rounded-full blur-3xl pointer-events-none -z-10"
-                  />
-                  <motion.div 
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: [1, 1.5, 1], opacity: 0.1 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute bottom-1/4 -left-16 w-48 h-48 bg-(--accent) rounded-full blur-[100px] pointer-events-none -z-10"
-                  />
-                </>
-              )}
+              {/* Static Glowing Nodes (Performance optimized) */}
+              <div className="absolute top-1/4 -right-32 w-96 h-96 bg-(--accent) rounded-full blur-[160px] opacity-[0.05] pointer-events-none -z-10" />
+              <div className="absolute bottom-1/4 -left-32 w-64 h-64 bg-white rounded-full blur-[140px] opacity-[0.03] pointer-events-none -z-10" />
 
-              {/* Links aligned to the right */}
-              <ul className="flex flex-col gap-6 mt-8 z-10 relative">
+              <ul className="flex flex-col gap-8 z-10 relative">
                 {navLinks.map((link, idx) => (
                   <motion.li
                     key={link.label}
                     custom={idx}
                     variants={activeItemVariants}
-                    className="overflow-hidden flex justify-end"
+                    className="overflow-hidden"
                   >
                     <a
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="group flex items-center gap-6 py-2 text-5xl sm:text-6xl font-black text-white/80 hover:text-(--accent) transition-all duration-500 w-full justify-end relative"
+                      className="group flex flex-col gap-1 py-1 transition-all duration-300"
                     >
-                      <motion.span
-                        className="text-(--accent) opacity-0 group-hover:opacity-100 transform translate-x-8 group-hover:translate-x-0 transition-all duration-500 ease-out text-4xl"
-                      >
-                        ←
-                      </motion.span>
-                      <span className="relative z-10 transition-transform duration-500 group-hover:-translate-x-4 drop-shadow-lg">
-                        {link.label}
-                      </span>
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-xs font-black text-(--accent) opacity-40 tabular-nums">
+                          0{idx + 1}
+                        </span>
+                        <span className="text-5xl sm:text-6xl font-black text-white hover:text-(--accent) transition-colors duration-500">
+                          {link.label}
+                        </span>
+                        <ArrowRight size={32} className="text-(--accent) opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden sm:block" />
+                      </div>
                     </a>
                   </motion.li>
                 ))}
               </ul>
 
-              <motion.div 
-                className="mt-auto pt-24 pb-12 z-10 relative w-full flex flex-col items-end"
-                custom={navLinks.length}
-                variants={activeItemVariants}
-              >
-                <p className="text-white/40 text-sm uppercase tracking-[0.3em] font-bold mb-6 text-right">Start a new project</p>
-                <a 
-                  href="#contact" 
-                  onClick={() => setOpen(false)} 
-                  className="btn-primary w-full max-w-[280px] flex justify-center py-5 text-lg rounded-full relative overflow-hidden group border border-(--accent)/30"
+              <div className="mt-auto pt-24 space-y-12 z-10 relative">
+                {/* CTA */}
+                <motion.div variants={activeItemVariants} custom={navLinks.length}>
+                  <p className="text-white/40 text-xs uppercase tracking-[0.4em] font-bold mb-4">Launch a project</p>
+                  <a
+                    href="#contact"
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-between p-6 bg-white/[0.03] border border-white/10 rounded-2xl group hover:bg-(--accent) transition-all duration-500"
+                  >
+                    <span className="text-xl font-bold group-hover:text-black transition-colors">Let's build something</span>
+                    <span className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-black/10 transition-colors">
+                      <ArrowRight className="group-hover:text-black transition-colors" />
+                    </span>
+                  </a>
+                </motion.div>
+
+                {/* Socials & Footer */}
+                <motion.div 
+                  variants={activeItemVariants} 
+                  custom={navLinks.length + 1}
+                  className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-8 pb-8 border-t border-white/5 pt-12"
                 >
-                  <span className="relative z-10 flex items-center gap-2 font-bold tracking-wide">
-                    Let's Talk
-                    <motion.span
-                      animate={!shouldReduceMotion ? { x: [0, 4, 0], y: [0, -4, 0] } : {}}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      ↗
-                    </motion.span>
-                  </span>
-                  {!shouldReduceMotion && (
-                     <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out rounded-full pointer-events-none"></span>
-                  )}
-                </a>
-              </motion.div>
+                  <div className="space-y-4">
+                    <p className="text-white/40 text-xs uppercase tracking-[0.4em] font-bold">Follow Us</p>
+                    <div className="flex gap-4">
+                      {[
+                        { icon: Twitter, href: '#' },
+                        { icon: Linkedin, href: '#' },
+                        { icon: Instagram, href: '#' },
+                        { icon: Github, href: '#' }
+                      ].map((social, i) => (
+                        <a key={i} href={social.href} className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/50 hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all duration-300">
+                          <social.icon size={18} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[10px] text-white/20 uppercase tracking-widest leading-loose">
+                      © {new Date().getFullYear()} Adave Studio<br />
+                      Built for standard.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
             </nav>
           </motion.div>
         )}
