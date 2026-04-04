@@ -122,7 +122,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'
           }`}
       >
-        <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
+        <div className="md:max-w-[1440px] md:mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between py-1">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
