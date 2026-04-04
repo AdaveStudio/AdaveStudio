@@ -91,11 +91,11 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-panel' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'
           }`}
       >
         <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8">
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between py-1">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
               <div className="relative flex items-center justify-center">
@@ -235,8 +235,8 @@ export default function Navbar() {
                 </motion.div>
 
                 {/* Socials & Footer */}
-                <motion.div 
-                  variants={activeItemVariants} 
+                <motion.div
+                  variants={activeItemVariants}
                   custom={navLinks.length + 1}
                   className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-8 pb-8 border-t border-white/5 pt-12"
                 >
