@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: 'Zayd Tahir',
     role: 'CEO, StudyLite.ai',
-    avatar: '/images/Zayd .png',
+    avatar: '/images/Zayd.png',
     rating: 5,
     text: "Adave Studio completely transformed our digital presence. Their team delivered a world-class product that tripled our conversion rate within the first month. Absolutely incredible work ethic and talent.",
   },
