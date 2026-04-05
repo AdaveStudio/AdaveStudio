@@ -1,7 +1,19 @@
+import { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const words = ['Excellence', 'Solutions', 'Expertise'];
 
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden bg-brand-black">
       {/* Background Decorative Glows */}
@@ -9,7 +21,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-blue-500/5 blur-[80px] md:blur-[100px] rounded-full" />
 
       <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Content Column */}
           <motion.div
@@ -28,9 +40,23 @@ export default function Hero() {
               <span className="tracking-wide uppercase">Digital Design Agency</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
               We Create <br />
-              <span className="text-brand-green italic">Digital Excellence</span>
+              <span className="text-brand-green italic">Digital</span> <br />
+              <div className="relative overflow-hidden h-[1.1em] text-brand-green italic">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={words[index]}
+                    initial={{ y: "100%" }}
+                    animate={{ y: "0%" }}
+                    exit={{ y: "-100%" }}
+                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                    className="inline-block"
+                  >
+                    {words[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
             </h1>
 
             <p className="text-gray-400 text-lg lg:text-xl mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
@@ -62,7 +88,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-12 flex items-center justify-center lg:justify-start gap-8 border-t border-white/5 pt-8"
+              className="mt-1 flex items-center justify-center lg:justify-start gap-8 border-t border-white/5 pt-8"
             >
               <div>
                 <div className="text-2xl font-bold text-white">150+</div>
@@ -96,7 +122,7 @@ export default function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  src="/Frame 1.png"
+                  src="/Ai-image.png"
                   alt="Agency Showcase"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                 />

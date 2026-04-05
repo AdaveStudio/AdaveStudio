@@ -130,7 +130,7 @@ export default function Navbar() {
                 <img
                   src="/AdaveLogo2.png"
                   alt="Adave Studio"
-                  className="w-10 h-10 md:w-15 md:scale-200 scale-110 object-contain relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out"
+                  className="w-10 h-10 md:w-15 md:scale-200 scale-110 object-contain relative z-10 transition-transform duration-500 ease-out"
                 />
               </div>
               {/* <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
