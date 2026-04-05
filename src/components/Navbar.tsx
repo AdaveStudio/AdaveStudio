@@ -127,7 +127,6 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
               <div className="relative flex items-center justify-center">
-                {/* <div className="absolute inset-0 bg-(--accent) blur-md opacity-20 group-hover:opacity-70 transition-opacity duration-500 rounded-full pointer-events-none"></div> */}
                 <img
                   src="/AdaveLogo2.png"
                   alt="Adave Studio"

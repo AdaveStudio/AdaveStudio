@@ -26,6 +26,18 @@ const services = [
     description: 'Data-driven marketing strategies that maximize ROI, increase visibility, and convert visitors into loyal customers.',
     tags: ['SEO', 'PPC', 'Social Media', 'Analytics'],
   },
+  {
+    number: '05',
+    title: 'Graphic Design',
+    description: 'We create visually stunning graphics that communicate your message effectively and enhance your brand identity.',
+    tags: ['Logo', 'Branding', 'Identity', 'Strategy'],
+  },
+  {
+    number: '06',
+    title: 'Print & Signage',
+    description: 'We create high-quality print materials and signage that make a lasting impression.',
+    tags: ['Flyers', 'Brochures', 'Posters', 'Signage'],
+  },
 ];
 
 const containerVariants = {
