@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useEffect } from 'react';
 // import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,16 +14,16 @@ import ScrollToTop from './components/ScrollToTop';
 // import Preloader from './components/Preloader';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Reveal the site after 2 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+  // useEffect(() => {
+  //   // Reveal the site after 2 seconds
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className="bg-brand-black text-white relative">
