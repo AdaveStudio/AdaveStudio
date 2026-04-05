@@ -11,7 +11,7 @@ const projects = [
     category: 'Web Design',
     image: '/images/Techondemand.png',
     desc: 'A modern, responsive web design for Tech On Demand, a leading provider of technology solutions.',
-    link: 'https://tech-on-demand.vercel.app/',
+    link: 'https://techondemandltd.com/',
     tags: ['React', 'TypeScript', 'Tailwind'],
   },
   {

@@ -11,7 +11,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Preloader from './components/Preloader';
+// import Preloader from './components/Preloader';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -27,9 +27,9 @@ export default function App() {
 
   return (
     <div className="bg-brand-black text-white relative">
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {loading && <Preloader key="loader" />}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       <Navbar />
       <main>
