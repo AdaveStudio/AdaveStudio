@@ -18,7 +18,7 @@ const services = [
     number: '03',
     title: 'Brand Identity',
     description: 'We develop powerful brand identities that differentiate your business and resonate deeply with your target audience.',
-    tags: ['Identity', 'Branding', 'Strategy', 'Messaging'],
+    tags: ['Logo', 'Branding', 'Identity', 'Strategy'],
   },
   {
     number: '04',
