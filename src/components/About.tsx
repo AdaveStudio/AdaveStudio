@@ -22,7 +22,7 @@ export default function About() {
           >
             <span className="text-sm font-bold text-[#888] mb-4 block">About Our Studio</span>
             <h2 className="text-4xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-              Transforming <span className='bg-brand-green'>Bold Ideas</span>  <br className="hidden lg:block" />
+              Transforming <span className='bg-brand-black text-brand-green'>Bold &nbsp; Ideas</span>  <br className="hidden lg:block" />
               Into Digital Excellence
             </h2>
           </motion.div>
