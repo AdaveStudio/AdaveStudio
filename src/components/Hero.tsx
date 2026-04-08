@@ -28,7 +28,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left "
           >
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -40,7 +40,7 @@ export default function Hero() {
               <span className="tracking-wide uppercase">Digital Design Agency</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
+            <h1 className="text-[40px] sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
               We Create <br />
               <span className="text-brand-green italic">Digital</span> <br />
               <div className="relative overflow-hidden h-[1.1em] text-brand-green italic">
