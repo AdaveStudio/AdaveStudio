@@ -116,8 +116,8 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        // initial={{ y: -100 }}
-        // animate={{ y: 0 }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'
           }`}
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <img
                   src="/AdaveLogo2.png"
                   alt="Adave Studio"
-                  className="w-10 h-10 md:w-15 md:scale-200 scale-110 object-contain"
+                  className="w-10 h-10 md:w-16 object-contain"
                 />
               </div>
               {/* <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
