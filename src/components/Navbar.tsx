@@ -116,8 +116,8 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        // initial={{ y: -100 }}
+        // animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'
           }`}
@@ -125,8 +125,8 @@ export default function Navbar() {
         <div className="md:max-w-[1440px] md:mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between py-1">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3 group" aria-label="Adave Studio Home">
-              <div className="relative flex items-center justify-center">
+            <a href="#home" className="" aria-label="Adave Studio Home">
+              <div className="">
                 <img
                   src="/AdaveLogo2.png"
                   alt="Adave Studio"
