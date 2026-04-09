@@ -41,7 +41,7 @@ export default function Contact() {
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         setStatus('success');
         setForm({ name: '', email: '', service: '', message: '' });
@@ -92,15 +92,15 @@ export default function Contact() {
                 variants={itemVariants}
                 key={label}
                 href={href}
-                className="flex items-center gap-4 group"
+                className="flex items-center bg-black p-2 gap-4 rounded-xl group"
                 aria-label={label}
               >
-                <div className="w-12 h-12 rounded-lg bg-white border border-black/10 flex items-center justify-center group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-300 flex-shrink-0">
-                  <Icon size={18} className="text-black group-hover:text-black transition-colors duration-300" />
+                <div className="w-10 h-10 rounded-lg bg-white border border-black/10 flex items-center justify-center group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-300 flex-shrink-0">
+                  <Icon size={20} className="text-black group-hover:text-black transition-colors duration-300" />
                 </div>
                 <div>
                   <div className="text-xs text-[#666] font-medium uppercase tracking-wider">{label}</div>
-                  <div className="text-sm font-semibold text-black">{value}</div>
+                  <div className="text-sm font-semibold text-brand-green">{value}</div>
                 </div>
               </motion.a>
             ))}
@@ -185,11 +185,10 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className={`btn-primary w-full justify-center py-4 text-sm transition-all duration-300 ${
-                  status === 'success' ? 'bg-brand-green! text-black!' : 
-                  status === 'error' ? 'bg-red-500! text-white!' : 
-                  'hover:bg-black! hover:text-white!'
-                } ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`btn-primary w-full justify-center py-4 text-sm transition-all duration-300 ${status === 'success' ? 'bg-brand-green! text-black!' :
+                  status === 'error' ? 'bg-red-500! text-white!' :
+                    'hover:bg-black! hover:text-white!'
+                  } ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {status === 'sending' ? (
                   <span className="flex items-center gap-2">

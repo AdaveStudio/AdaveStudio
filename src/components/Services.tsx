@@ -118,18 +118,6 @@ export default function Services() {
             </motion.article>
           ))}
         </motion.div>
-
-        {/* Bottom CTA
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <a href="#contact" className="btn-outline !text-black !border-black/20 hover:!border-brand-green hover:!bg-brand-green inline-flex">
-            View All Services <ArrowRight size={16} />
-          </a>
-        </motion.div> */}
       </div>
     </section>
   );

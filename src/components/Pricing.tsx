@@ -3,47 +3,49 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    name: 'Launch',
-    price: '$1,499',
-    description: 'The definitive starting point for startups and visionaries looking to establish immediate market presence.',
+    name: 'Starter',
+    price: '₦150,000',
+    description: 'Perfect for small businesses and solo brands looking for consistent design presence.',
     features: [
-      'High-Fidelity Interaction Design',
-      'Advanced User Experience Audit',
-      'Conversion-Optimized Flow',
-      '3 Rounds of Strategic Revisions',
-      '90-Day Priority Support',
+      'Up to 4 social media graphics/mo',
+      '1 flyer or print design/mo',
+      'Website content updates (up to 3)',
+      '1 revision round per deliverable',
+      'WhatsApp support (Mon–Fri)',
     ],
-    cta: 'Initiate Launch',
+    cta: 'Select Starter',
     highlighted: false,
   },
   {
-    name: 'Elevation',
-    price: '$3,999',
-    description: 'Our most comprehensive transformation package for brands ready to scale and dominate their niche.',
+    name: 'Growth',
+    price: '₦350,000',
+    description: 'Engineered for growing SMEs and funded startups ready to dominate their market.',
     features: [
-      'Everything in Launch',
-      'High-End Motion Architecture',
-      'Deep E-commerce Integration',
-      'Technical SEO Infrastructure',
-      'Headless CMS Implementation',
-      'Dedicated Performance Audit',
+      'Up to 12 social media graphics/mo',
+      '3 flyers or print designs/mo',
+      'Website updates + 1 new section/mo',
+      'Monthly brand strategy call',
+      '2 revision rounds per deliverable',
+      'Priority WhatsApp support',
+      'Quarterly brand audit report',
     ],
-    cta: 'Elevate Your Brand',
+    cta: 'Select Growth',
     highlighted: true,
   },
   {
-    name: 'Apex',
-    price: 'Custom',
-    description: 'Tailored, full-spectrum digital engineering for large-scale platforms and complex global ecosystems.',
+    name: 'Custom',
+    price: 'Contact Us',
+    description: 'Full-spectrum digital engineering and strategic partnership for established enterprises.',
     features: [
-      'Enterprise SaaS Platforms',
-      'Full Brand DNA Development',
-      'Native Mobile Engineering',
-      'AI Integration & Automation',
-      '24/7 Strategic Maintenance',
-      'Direct Access to Lead Partner',
+      'Unlimited social media & print assets',
+      'Full website management & custom dev',
+      'Bi-weekly strategic consulting',
+      'Unlimited revisions & priority speed',
+      'Dedicated lead design partner',
+      'Full brand identity development',
+      'Custom UI/UX & App Engineering',
     ],
-    cta: 'Consult for Apex',
+    cta: 'Book a Consultation',
     highlighted: false,
   },
 ];
@@ -94,7 +96,7 @@ export default function Pricing() {
             <motion.article
               variants={itemVariants}
               key={plan.name}
-              className={`relative flex flex-col md:p-8 p-4 rounded-2xl border transition-all duration-500 group ${plan.highlighted
+              className={`relative flex flex-col md:p-5 p-4 rounded-2xl border transition-all duration-500 group ${plan.highlighted
                 ? 'bg-brand-green border-brand-green text-black scale-105 z-10 shadow-[0_20px_50px_rgba(163,255,0,0.2)]'
                 : 'bg-brand-surface border-white/5 text-white hover:border-brand-green/30'
                 }`}
@@ -105,20 +107,20 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="mb-8">
+              <div className="mb-4">
                 <h3 className={`text-xl font-bold mb-2 ${plan.highlighted ? 'text-black' : 'text-white'}`}>
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="text-4xl font-black">{plan.price}</span>
-                  {plan.price !== 'Custom' && <span className={`text-sm font-medium ${plan.highlighted ? 'text-black/60' : 'text-[#666]'}`}>/project</span>}
+                  {plan.price !== 'Contact Us' && <span className={`text-sm font-medium ${plan.highlighted ? 'text-black/60' : 'text-[#666]'}`}>/month</span>}
                 </div>
                 <p className={`text-sm leading-relaxed ${plan.highlighted ? 'text-black/70' : 'text-[#aaa]'}`}>
                   {plan.description}
                 </p>
               </div>
 
-              <div className={`flex-1 md:space-y-4 space-y-2 mb-10`}>
+              <div className={`flex-1 md:space-y-4 space-y-2 mb-4`}>
                 <div className={`text-xs font-black uppercase tracking-widest ${plan.highlighted ? 'text-black/40' : 'text-white/20'}`}>
                   Strategic Perks
                 </div>

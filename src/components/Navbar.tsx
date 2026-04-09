@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Twitter, Linkedin, Instagram, Github, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Twitter, Linkedin, Instagram, Github, ArrowRight, Star } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'Services', href: '/#services' },
+  { label: 'About', href: '/#about' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
   const shouldReduceMotion = useReducedMotion();
 
   // Highlighted Crazy Animation Variants
@@ -77,6 +80,11 @@ export default function Navbar() {
 
   // Intersection Observer for Active Section
   useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
     const observerOptions = {
       root: null,
       rootMargin: '-20% 0px -70% 0px',
@@ -94,12 +102,15 @@ export default function Navbar() {
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
 
     navLinks.forEach((link) => {
-      const section = document.querySelector(link.href);
-      if (section) observer.observe(section);
+      if (link.href.startsWith('/#')) {
+        const id = link.href.split('#')[1];
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+      }
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   // Prevent background scrolling when menu is open
   useEffect(() => {
@@ -113,19 +124,30 @@ export default function Navbar() {
     };
   }, [open]);
 
+  const handleLinkClick = (href: string) => {
+    setOpen(false);
+    if (href.startsWith('/#') && location.pathname === '/') {
+      const id = href.split('#')[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black shadow-lg' : 'bg-transparent'
           }`}
       >
         <div className="md:max-w-[1440px] md:mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between py-1">
             {/* Logo */}
-            <a href="#home" className="" aria-label="Adave Studio Home">
+            <Link to="/" className="" aria-label="Adave Studio Home" onClick={() => handleLinkClick('/#home')}>
               <div className="">
                 <img
                   src="/AdaveLogo2.png"
@@ -133,40 +155,45 @@ export default function Navbar() {
                   className="w-10 h-10 md:w-16 object-contain"
                 />
               </div>
-              {/* <span className="text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-(--accent) transition-colors duration-300">
-                Adave<span className="text-(--accent) group-hover:text-white transition-colors duration-300">.</span>
-              </span> */}
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.href.slice(1);
+                const targetId = link.href.includes('#') ? link.href.split('#')[1] : '';
+                const isActive = (location.pathname === '/' && activeSection === targetId) || (location.pathname === link.href);
+
                 return (
-                  <a
+                  <Link
                     key={link.label}
-                    href={link.href}
-                    className={`text-sm font-medium transition-colors duration-300 relative group ${isActive ? 'text-brand-green' : 'text-[#aaa] hover:text-brand-green'
+                    to={link.href}
+                    onClick={() => handleLinkClick(link.href)}
+                    className={`text-sm font-bold transition-all duration-300 relative group ${isActive
+                      ? 'text-brand-green'
+                      : 'text-[#aaa] hover:text-brand-green'
                       }`}
                   >
                     {link.label}
                     <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-green transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
                       }`} />
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
 
-            {/* CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <a href="#contact" className="btn-primary text-sm py-3 px-8 rounded-full">
+              <Link
+                to="/#contact"
+                className="btn-primary text-sm py-3 px-8 rounded-full transition-all duration-300"
+                onClick={() => handleLinkClick('/#contact')}
+              >
                 Get Started
-              </a>
+              </Link>
             </div>
 
             {/* Mobile toggle */}
             <button
-              className="lg:hidden text-white p-2"
+              className="lg:hidden p-2 text-white transition-colors duration-500"
               onClick={() => setOpen(!open)}
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
@@ -225,7 +252,9 @@ export default function Navbar() {
 
               <ul className="flex flex-col gap-8 z-10 relative">
                 {navLinks.map((link, idx) => {
-                  const isActive = activeSection === link.href.slice(1);
+                  const targetId = link.href.includes('#') ? link.href.split('#')[1] : '';
+                  const isActive = (location.pathname === '/' && activeSection === targetId) || (location.pathname === link.href);
+                  
                   return (
                     <motion.li
                       key={link.label}
@@ -233,9 +262,9 @@ export default function Navbar() {
                       variants={activeItemVariants}
                       className="overflow-hidden"
                     >
-                      <a
-                        href={link.href}
-                        onClick={() => setOpen(false)}
+                      <Link
+                        to={link.href}
+                        onClick={() => handleLinkClick(link.href)}
                         className="group flex flex-col gap-1 py-1 transition-all duration-300"
                       >
                         <div className="flex items-baseline gap-4">
@@ -250,7 +279,7 @@ export default function Navbar() {
                           <ArrowRight size={32} className={`text-brand-green transition-all duration-500 hidden sm:block ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
                             }`} />
                         </div>
-                      </a>
+                      </Link>
                     </motion.li>
                   );
                 })}
@@ -260,16 +289,16 @@ export default function Navbar() {
                 {/* CTA */}
                 <motion.div variants={activeItemVariants} custom={navLinks.length}>
                   <p className="text-white/40 text-xs uppercase tracking-[0.4em] font-bold mb-4">Launch a project</p>
-                  <a
-                    href="#contact"
-                    onClick={() => setOpen(false)}
+                  <Link
+                    to="/#contact"
+                    onClick={() => handleLinkClick('/#contact')}
                     className="flex items-center justify-between p-4 bg-white/[0.03] border border-white/10 rounded-2xl group hover:bg-(--accent) transition-all duration-500"
                   >
                     <span className="text-xl font-bold group-hover:text-black transition-colors">Let's build something</span>
                     <span className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-black/10 transition-colors">
                       <ArrowRight className="group-hover:text-black transition-colors" />
                     </span>
-                  </a>
+                  </Link>
                 </motion.div>
 
                 {/* Socials & Footer */}

@@ -1,32 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Process from './components/Process';
-import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import Careers from './pages/Careers';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
-    <div className="bg-brand-black text-white relative">
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Portfolio />
-        <Process />
-        <Pricing />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <Router>
+      <div className="bg-brand-black text-white relative">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/careers" element={<Careers />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </Router>
   );
 }
 

@@ -1,11 +1,26 @@
+import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Instagram, Github, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
 const links = {
-  Services: ['Web Development', 'UI/UX Design', 'Brand Strategy', 'Digital Marketing', 'SEO'],
-  Company: ['About Us', 'Portfolio', 'Careers'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
+  Services: [
+    { name: 'Web Development', href: '/#services' },
+    { name: 'UI/UX Design', href: '/#services' },
+    { name: 'Brand Strategy', href: '/#services' },
+    { name: 'Digital Marketing', href: '/#services' },
+    { name: 'SEO', href: '/#services' },
+  ],
+  Company: [
+    { name: 'About Us', href: '/#about' },
+    { name: 'Portfolio', href: '/#portfolio' },
+    { name: 'Careers', href: '/careers' },
+  ],
+  Legal: [
+    { name: 'Privacy Policy', href: '#' },
+    { name: 'Terms of Service', href: '#' },
+    { name: 'Cookie Policy', href: '#' },
+  ],
 };
 
 const socials = [
@@ -82,9 +97,9 @@ export default function Footer() {
         >
           {/* Brand */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-3 px-4 mb-6 group" aria-label="Adave Studio">
+            <Link to="/" className="flex items-center gap-3 px-4 mb-6 group" aria-label="Adave Studio">
               <img src="/AdaveLogo2.png" alt="Adave Studio" className="w-10 h-8 scale-150 object-contain" />
-            </a>
+            </Link>
             <p className="text-[#aaa] text-sm leading-relaxed mb-6 max-w-xs">
               A premier digital studio engineering high-performance ecosystems for brands that refuse to be secondary. We turn digital potential into absolute authority.
             </p>
@@ -108,13 +123,13 @@ export default function Footer() {
               <h3 className="text-sm font-extrabold uppercase tracking-widest text-white mb-5">{heading}</h3>
               <ul className="flex flex-col gap-3">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
                       className="text-sm text-[#aaa] hover:text-brand-green transition-colors duration-300"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
