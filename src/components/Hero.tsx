@@ -107,7 +107,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative mt-12 lg:mt-0"
+            className="relative mt-12 lg:mt-0 max-lg:hidden"
           >
             {/* Floating Card UI Effect */}
             <div className="relative z-20 group">
