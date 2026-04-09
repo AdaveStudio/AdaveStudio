@@ -207,7 +207,7 @@ export default function Contact() {
           </motion.div>
         </div>
         {/* CTA Card */}
-        <motion.div variants={itemVariants} className="mt-4 bg-brand-green rounded-xl p-6 flex items-center justify-between">
+        <motion.div variants={itemVariants} className="mt-4 bg-brand-green rounded-xl p-6 md:flex items-center justify-between">
           <div>
             <h3 className="text-black font-extrabold text-xl mb-2">Free Consultation</h3>
             <p className="text-black/70 text-sm mb-4">Book a 30-minute strategy session with our team at no cost.</p>
