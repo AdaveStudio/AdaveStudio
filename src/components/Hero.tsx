@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-green/10 blur-[100px] md:blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-blue-500/5 blur-[80px] md:blur-[100px] rounded-full" />
 
-      <div className="md:max-w-[1440px] md:mx-auto px-3 lg:px-8 relative z-10">
+      <div className="md:max-w-[1440px] md:mx-auto px-1 lg:px-8 ">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Content Column */}
@@ -40,7 +40,7 @@ export default function Hero() {
               <span className="tracking-wide uppercase">Premier Digital Studio</span>
             </motion.div>
 
-            <h1 className="text-[40px] sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
+            <h1 className="text-[45px] sm:text-6xl lg:text-8xl font-black mb-4 leading-[0.95] text-white tracking-tighter">
               Defining The <br />
               <span className="text-brand-green italic">Future</span> <br />
               <div className="relative overflow-hidden h-[1.1em] text-brand-green italic">
@@ -59,19 +59,19 @@ export default function Hero() {
               </div>
             </h1>
 
-            <p className="text-gray-400 text-lg lg:text-xl mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-gray-400 text-lg lg:text-xl mb-5 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               We engineer high-performance digital ecosystems for brands that refuse to be secondary.
               Elite strategy meet precision technical execution.
             </p>
 
-            <div className="flex max-md:flex-col justify-center lg:justify-start gap-5">
+            <div className="flex max-md:flex-col justify-center lg:justify-start gap-3">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center gap-2 px-10 py-3 bg-brand-green text-black font-bold rounded-full transition-shadow hover:shadow-[0_0_20px_rgba(163,255,0,0.4)]"
+                className=" flex items-center justify-center gap-2 px-10 py-3 bg-brand-green text-black font-bold rounded-full transition-shadow hover:shadow-[0_0_20px_rgba(163,255,0,0.4)]"
               >
-                Initiate Project <ArrowRight size={18} />
+                Get Started <ArrowRight size={18} />
               </motion.a>
 
               <motion.a
@@ -88,7 +88,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-1 flex items-center justify-center lg:justify-start gap-8 border-t border-white/5 pt-8"
+              className="mt-3 flex items-center justify-center lg:justify-start gap-8 border-t border-white/5 pt-8"
             >
               <div>
                 <div className="text-2xl font-bold text-white">200+</div>

@@ -92,7 +92,7 @@ export default function Contact() {
                 variants={itemVariants}
                 key={label}
                 href={href}
-                className="flex items-center bg-black p-2 gap-4 rounded-xl group"
+                className="flex items-center p-2 gap-4 rounded-xl group"
                 aria-label={label}
               >
                 <div className="w-10 h-10 rounded-lg bg-white border border-black/10 flex items-center justify-center group-hover:bg-brand-green group-hover:border-brand-green transition-all duration-300 flex-shrink-0">
@@ -100,7 +100,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-xs text-[#666] font-medium uppercase tracking-wider">{label}</div>
-                  <div className="text-sm font-semibold text-brand-green">{value}</div>
+                  <div className="text-sm font-semibold text-black  ">{value}</div>
                 </div>
               </motion.a>
             ))}

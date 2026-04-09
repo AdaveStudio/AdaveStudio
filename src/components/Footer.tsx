@@ -79,7 +79,7 @@ export default function Footer() {
                 type="submit"
                 className="bg-brand-green text-black font-bold text-sm px-6 py-3 rounded-r-sm hover:bg-brand-green-dim transition-colors flex items-center gap-2"
               >
-                <Sparkles size={14} /> Subscribe
+                Subscribe
               </button>
             </form>
           </div>
