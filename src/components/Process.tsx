@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     number: '01',
-    title: 'Discovery & Strategy',
-    description: 'We start by deep-diving into your business goals, target audience, and competitive landscape to forge a rock-solid strategy.',
+    title: 'Strategic Audit',
+    description: 'We conduct an intensive analysis of your market position, competitive landscape, and user data to architect a definitive path to market authority.',
   },
   {
     number: '02',
-    title: 'Design & Prototype',
-    description: 'Our designers craft stunning wireframes and interactive prototypes that validate concepts before a single line of code is written.',
+    title: 'Experience Engineering',
+    description: 'Our design team transforms strategy into high-fidelity prototypes, iterating on user psychology and interaction patterns to ensure optimal retention.',
   },
   {
     number: '03',
-    title: 'Development & Launch',
-    description: 'Our engineers build robust, performant solutions using modern tech stacks, rigorously tested before a smooth launch.',
+    title: 'Technical Deployment',
+    description: 'We execute the build using world-class engineering standards, ensuring your infrastructure is fast, secure, and ready for global scalability.',
   },
   {
     number: '04',
-    title: 'Optimize & Scale',
-    description: "Post-launch, we monitor performance, gather data, and continuously optimize to ensure your product's long-term growth.",
+    title: 'Performance Intelligence',
+    description: "Post-launch, we activate our data-driven optimization engine, monitoring KPIs in real-time to drive continuous growth and market dominance.",
   },
 ];
 
@@ -50,17 +50,17 @@ export default function Process() {
           className="flex flex-col lg:flex-row justify-between gap-10 mb-20"
         >
           <div className="max-w-2xl">
-            <motion.div variants={itemVariants} className="section-tag after:bg-black before:bg-black text-black">How We Work</motion.div>
+            <motion.div variants={itemVariants} className="section-tag after:bg-black before:bg-black text-black">Our Methodology</motion.div>
             <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight">
-              Our Working <span className="text-brand-green bg-black px-2 mt-2 inline-block">Process</span>
+              The Blueprint <span className="text-brand-green bg-black px-2 mt-2 inline-block">Of Execution</span>
             </motion.h2>
           </div>
           <motion.div variants={itemVariants} className="max-w-md">
             <p className="text-[#555] leading-relaxed mb-6 text-lg">
-              Our proven four-step process has helped hundreds of businesses achieve their digital ambitions on time and on budget.
+              A systematic, result-driven framework engineered to transition your brand from its current state to market dominance.
             </p>
             <a href="#contact" className="btn-outline !text-black !border-black/20 hover:!border-brand-green hover:!bg-brand-green inline-flex rounded-full">
-              Start Conversation <ArrowRight size={18} />
+              Explore the framework <ArrowRight size={18} />
             </a>
           </motion.div>
         </motion.div>
@@ -108,17 +108,17 @@ export default function Process() {
         >
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-black mb-2">
-              Ready to Build Something Great?
+              Ready to Accelerate Your Growth?
             </div>
             <p className="text-black/70 text-sm lg:text-base">
-              Join 850+ companies that trust Adave Studio with their digital future.
+              Join the elite circle of 50+ visionary partners who have revolutionized their digital footprint with Adave Studio.
             </p>
           </div>
           <a
             href="#contact"
             className="flex-shrink-0 bg-black text-white font-bold text-sm px-8 py-4 rounded-sm hover:bg-brand-dark transition-colors inline-flex items-center gap-2"
           >
-            Get Started Today <ArrowRight size={16} />
+            Get Started <ArrowRight size={16} />
           </a>
         </motion.div>
       </div>

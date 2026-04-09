@@ -7,21 +7,21 @@ const testimonials = [
     role: 'CEO, StudyLite.ai',
     avatar: '/images/Zayd.png',
     rating: 5,
-    text: "Adave Studio completely transformed our digital presence. Their team delivered a world-class product that tripled our conversion rate within the first month. Absolutely incredible work ethic and talent.",
+    text: "Adave Studio redefined our digital trajectory. Their engineering and design depth resulted in a product that didn't just meet specifications—it dominated the market from day one.",
   },
   {
     name: 'James Whitfield',
     role: 'Founder, Lumina Brands',
     avatar: '/images/testimonial-user.png',
     rating: 5,
-    text: "Working with Adave was the best decision we made for our rebrand. They didn't just create a logo — they built an entire brand ecosystem. The ROI has been phenomenal.",
+    text: "The strategic foresight provided by Adave is unmatched. They built a brand ecosystem that communicates authority and luxury, delivering an ROI that exceeded our most optimistic projections.",
   },
   {
     name: 'Jafar Abass',
     role: 'Founder, Sparkcode',
     avatar: '/images/Jafar.jpeg',
     rating: 5,
-    text: "I've worked with many agencies, but Adave Studio stands out for their technical depth and creative thinking. They delivered our SaaS platform 3 weeks ahead of schedule. Remarkable team.",
+    text: "Remarkable speed matched with uncompromising quality. Adave Studio deployed our SaaS infrastructure weeks ahead of schedule, setting a new benchmark for technical excellence in our industry.",
   },
 ];
 
@@ -65,10 +65,10 @@ export default function Testimonials() {
           variants={itemVariants}
           className="text-center mb-16"
         >
-          <div className="section-tag justify-center">Client Stories</div>
+          <div className="section-tag justify-center">Client Success</div>
           <h2 className="text-3xl lg:text-5xl font-extrabold">
-            Testimonials That{' '}
-            <span className="text-brand-green bg-black px-2 mt-1 inline-block">Speak for Itself</span>
+            Impact That <br />
+            <span className="text-brand-green bg-black px-2 mt-1 inline-block">Speaks Volumes</span>
           </h2>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
 
               <StarRating rating={t.rating} />
 
-              <blockquote className={`mt-5 mb-8 text-sm leading-relaxed flex-grow ${i === 1 ? 'text-[#322f2f]' : 'text-[#000]'}`}>
+              <blockquote className={`mt-5 mb-8 text-sm leading-relaxed flex-grow ${i === 1 ? 'text-[#aaa]' : 'text-[#000]'}`}>
                 "{t.text}"
               </blockquote>
 
@@ -115,7 +115,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <div className={`font-bold text-sm ${i === 1 ? 'text-black' : 'text-black'}`}>{t.name}</div>
+                  <div className={`font-bold text-sm ${i === 1 ? 'text-white' : 'text-black'}`}>{t.name}</div>
                   <div className={`text-xs mt-0.5 ${i === 1 ? 'text-[#666]' : 'text-[#666]'}`}>{t.role}</div>
                 </div>
               </div>
@@ -132,9 +132,9 @@ export default function Testimonials() {
           className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-center"
         >
           {[
-            { value: '850+', label: 'Happy Clients' },
-            { value: '4.9/5', label: 'Average Rating' },
-            { value: '25+', label: 'Global Awards' },
+            { value: '50+', label: 'Global Partners' },
+            { value: '4.9/5', label: 'Satisfaction Score' },
+            { value: '25+', label: 'Industry Awards' },
           ].map((item) => (
             <motion.div variants={itemVariants} key={item.label} className="flex flex-col items-center">
               <span className="text-3xl font-extrabold text-black">{item.value}</span>

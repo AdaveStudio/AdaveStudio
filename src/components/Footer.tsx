@@ -84,12 +84,9 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-3 px-4 mb-6 group" aria-label="Adave Studio">
               <img src="/AdaveLogo2.png" alt="Adave Studio" className="w-10 h-8 scale-150 object-contain" />
-              {/* <span className="text-xl font-extrabold tracking-tight">
-                Adave<span className="text-brand-green">.</span>
-              </span> */}
             </a>
             <p className="text-[#aaa] text-sm leading-relaxed mb-6 max-w-xs">
-              We're a full-service digital agency crafting exceptional online experiences that drive measurable results for ambitious brands worldwide.
+              A premier digital studio engineering high-performance ecosystems for brands that refuse to be secondary. We turn digital potential into absolute authority.
             </p>
             <div className="flex gap-3">
               {socials.map(({ icon: Icon, href, label }) => (

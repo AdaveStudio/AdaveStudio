@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const words = ['Excellence', 'Solutions', 'Expertise'];
+const words = ['Authority', 'Innovation', 'Dominance'];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -28,7 +28,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left "
+            className="text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -37,12 +37,12 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-brand-green text-xs font-medium mb-8"
             >
               <Star size={14} fill="currentColor" />
-              <span className="tracking-wide uppercase">Digital Design Agency</span>
+              <span className="tracking-wide uppercase">Premier Digital Studio</span>
             </motion.div>
 
             <h1 className="text-[40px] sm:text-6xl lg:text-8xl font-black mb-8 leading-[0.95] text-white tracking-tighter">
-              We Create <br />
-              <span className="text-brand-green italic">Digital</span> <br />
+              Defining The <br />
+              <span className="text-brand-green italic">Future</span> <br />
               <div className="relative overflow-hidden h-[1.1em] text-brand-green italic">
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -60,8 +60,8 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-400 text-lg lg:text-xl mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              We craft premium digital experiences that transform ideas into powerful brands.
-              High-end strategy meets precision execution.
+              We engineer high-performance digital ecosystems for brands that refuse to be secondary.
+              Elite strategy meet precision technical execution.
             </p>
 
             <div className="flex max-md:flex-col justify-center lg:justify-start gap-5">
@@ -71,7 +71,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary flex items-center gap-2 px-10 py-3 bg-brand-green text-black font-bold rounded-full transition-shadow hover:shadow-[0_0_20px_rgba(163,255,0,0.4)]"
               >
-                Get Started <ArrowRight size={18} />
+                Initiate Project <ArrowRight size={18} />
               </motion.a>
 
               <motion.a
@@ -79,7 +79,7 @@ export default function Hero() {
                 whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
                 className="px-10 py-3 border border-white/20 text-white font-bold rounded-full transition-all"
               >
-                View Work
+                View Case Studies
               </motion.a>
             </div>
 
@@ -91,13 +91,13 @@ export default function Hero() {
               className="mt-1 flex items-center justify-center lg:justify-start gap-8 border-t border-white/5 pt-8"
             >
               <div>
-                <div className="text-2xl font-bold text-white">150+</div>
-                <div className="text-sm text-gray-500 uppercase tracking-widest">Projects</div>
+                <div className="text-2xl font-bold text-white">200+</div>
+                <div className="text-sm text-gray-500 uppercase tracking-widest">Deployments</div>
               </div>
               <div className="w-px h-8 bg-white/10" />
               <div>
-                <div className="text-2xl font-bold text-white">12</div>
-                <div className="text-sm text-gray-500 uppercase tracking-widest">Awards</div>
+                <div className="text-2xl font-bold text-white">25+</div>
+                <div className="text-sm text-gray-500 uppercase tracking-widest">Industry Awards</div>
               </div>
             </motion.div>
           </motion.div>

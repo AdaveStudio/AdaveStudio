@@ -3,47 +3,47 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$999',
-    description: 'Perfect for small projects and startups looking for a professional boost.',
+    name: 'Launch',
+    price: '$1,499',
+    description: 'The definitive starting point for startups and visionaries looking to establish immediate market presence.',
     features: [
-      'High-fidelity Wireframes',
-      'Custom UI/UX Design',
-      'Responsive Web Development',
-      '2 Rounds of Revisions',
-      '30-Day Support',
+      'High-Fidelity Interaction Design',
+      'Advanced User Experience Audit',
+      'Conversion-Optimized Flow',
+      '3 Rounds of Strategic Revisions',
+      '90-Day Priority Support',
     ],
-    cta: 'Start with Starter',
+    cta: 'Initiate Launch',
     highlighted: false,
   },
   {
-    name: 'Professional',
-    price: '$2,499',
-    description: 'Our most popular plan for growing brands that need a full digital transformation.',
+    name: 'Elevation',
+    price: '$3,999',
+    description: 'Our most comprehensive transformation package for brands ready to scale and dominate their niche.',
     features: [
-      'Everything in Starter',
-      'Advanced Framer Animations',
-      'E-commerce Integration',
-      'SEO Optimization Suite',
-      'CMS Setup (Contentful/Sanity)',
-      'Priority Support',
+      'Everything in Launch',
+      'High-End Motion Architecture',
+      'Deep E-commerce Integration',
+      'Technical SEO Infrastructure',
+      'Headless CMS Implementation',
+      'Dedicated Performance Audit',
     ],
-    cta: 'Go Professional',
+    cta: 'Elevate Your Brand',
     highlighted: true,
   },
   {
-    name: 'Enterprise',
+    name: 'Apex',
     price: 'Custom',
-    description: 'Tailored solutions for large-scale platforms and complex digital ecosystems.',
+    description: 'Tailored, full-spectrum digital engineering for large-scale platforms and complex global ecosystems.',
     features: [
-      'Full-scale SaaS Platforms',
-      'Branding & Visual Identity',
-      'Mobile App Development',
-      'Marketing Automation',
-      'Dedicated Account Manager',
-      'Ongoing 24/7 Maintenance',
+      'Enterprise SaaS Platforms',
+      'Full Brand DNA Development',
+      'Native Mobile Engineering',
+      'AI Integration & Automation',
+      '24/7 Strategic Maintenance',
+      'Direct Access to Lead Partner',
     ],
-    cta: 'Contact for Enterprise',
+    cta: 'Consult for Apex',
     highlighted: false,
   },
 ];
@@ -73,12 +73,12 @@ export default function Pricing() {
           variants={itemVariants}
           className="text-center mb-20"
         >
-          <div className="section-tag justify-center">Flexible Pricing</div>
+          <div className="section-tag justify-center">Investment Plans</div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
-            Plans That Scale <span className="text-brand-green">With You</span>
+            Invest In <span className="text-brand-green">Scalability</span>
           </h2>
           <p className="text-[#aaa] max-w-2xl mx-auto text-lg">
-            Choose the perfect plan for your business needs. Transparent pricing for exceptional digital outcomes.
+            Transparent, result-driven pricing tiers engineered to match your stage of growth and business complexity.
           </p>
         </motion.div>
 
@@ -99,11 +99,11 @@ export default function Pricing() {
                 : 'bg-brand-surface border-white/5 text-white hover:border-brand-green/30'
                 }`}
             >
-              {/* {plan.highlighted && (
-                <div className="absolute top-0 right-[50%] -translate-y-1/2 px-4 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full flex items-center gap-1.5 shadow-xl">
-                  <Sparkles size={10} className="text-brand-green" /> Most Popular
+              {plan.highlighted && (
+                <div className="absolute top-0 right-[50%] -translate-y-1/2 translate-x-1/2 px-4 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full flex items-center gap-1.5 shadow-xl whitespace-nowrap">
+                  Most Recommended
                 </div>
-              )} */}
+              )}
 
               <div className="mb-8">
                 <h3 className={`text-xl font-bold mb-2 ${plan.highlighted ? 'text-black' : 'text-white'}`}>
@@ -120,7 +120,7 @@ export default function Pricing() {
 
               <div className={`flex-1 md:space-y-4 space-y-2 mb-10`}>
                 <div className={`text-xs font-black uppercase tracking-widest ${plan.highlighted ? 'text-black/40' : 'text-white/20'}`}>
-                  What's Included
+                  Strategic Perks
                 </div>
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3 text-sm font-medium">

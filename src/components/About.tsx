@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: '10k+', label: 'Deal with Clients' },
-  { value: '1.5k+', label: 'Team Members' },
-  { value: '24.1k+', label: 'Completed Project' },
+  { value: '50+', label: 'Global Partnerships' },
+  { value: '15+', label: 'Specialized Minds' },
+  { value: '200+', label: 'High-End Deliveries' },
 ];
 
 export default function About() {
@@ -22,8 +22,8 @@ export default function About() {
           >
             <span className="text-sm font-bold text-[#888] mb-4 block">About Our Studio</span>
             <h2 className="text-4xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-              Transforming <span className='bg-brand-black text-brand-green'>Bold &nbsp; Ideas</span>  <br className="hidden lg:block" />
-              Into Digital Excellence
+              Forging <span className='bg-brand-black text-brand-green'>Authority</span>  <br className="hidden lg:block" />
+              In A Digital Age
             </h2>
           </motion.div>
 
@@ -67,7 +67,7 @@ export default function About() {
           {/* Cards Area */}
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            {/* Card 1: Ad Campaign Strategies (Accent) */}
+            {/* Card 1: Performance Marketing */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -76,18 +76,14 @@ export default function About() {
               className="card-accent-light md:p-6 p-4 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-2xl font-bold mb-4">Ad Campaign Strategies</h3>
+                <h3 className="text-2xl font-bold mb-4">Performance Marketing</h3>
                 <p className="text-[#555] leading-relaxed mb-8">
-                  Our ad campaign strategies are designed to maximize your brand's reach and impact,
-                  ensuring effective engagement and measurable results.
+                  We design data-driven campaigns that don't just reach audiences—they dominate markets and maximize ROI through surgical precision.
                 </p>
               </div>
-              {/* <button className="px-6 py-2.5 rounded-xl bg-black/5 border border-black/5 text-sm font-bold group w-fit hover:bg-black/10 transition-all flex items-center gap-2">
-                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button> */}
             </motion.div>
 
-            {/* Card 2: Content Strategy (Muted) */}
+            {/* Card 2: Content Infrastructure */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,18 +92,14 @@ export default function About() {
               className="card-muted-light md:p-6 p-4 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-2xl font-bold mb-4">Content Strategy</h3>
+                <h3 className="text-2xl font-bold mb-4">Content Ecosystems</h3>
                 <p className="text-[#555] leading-relaxed mb-8">
-                  Our content strategy focuses on creating engaging, relevant material
-                  that drives audience interaction and supports your business goals.
+                  Beyond standard content, we build scalable media infrastructures that serve as the backbone for your brand's digital presence.
                 </p>
               </div>
-              {/* <button className="px-6 py-2.5 rounded-xl bg-white border border-black/5 shadow-sm text-sm font-bold group w-fit hover:bg-black/5 transition-all flex items-center gap-2">
-                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button> */}
             </motion.div>
 
-            {/* Card 3: Business Scaling (Muted, Wide) */}
+            {/* Card 3: Enterprise Solutions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -116,15 +108,11 @@ export default function About() {
               className="card-muted-light md:p-6 p-4 md:col-span-2 flex flex-col md:flex-row justify-between items-start md:items-end gap-8"
             >
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-4">Business Scaling</h3>
+                <h3 className="text-2xl font-bold mb-4">Scalable Infrastructure</h3>
                 <p className="text-[#555] leading-relaxed">
-                  Our expert strategies in business scaling help you expand your operations efficiently,
-                  ensuring sustainable growth and increased market presence. Partner with us to elevate your business to new heights.
+                  Our architecture is built for the long term. We deploy systems that grow alongside your ambitions, ensuring stability, security, and peak performance at any scale.
                 </p>
               </div>
-              {/* <button className="px-6 py-2.5 rounded-xl bg-white border border-black/5 shadow-sm text-sm font-bold group w-fit flex-shrink-0 hover:bg-black/5 transition-all flex items-center gap-2">
-                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button> */}
             </motion.div>
 
           </div>

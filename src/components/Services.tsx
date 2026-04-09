@@ -4,39 +4,39 @@ import { motion } from 'framer-motion';
 const services = [
   {
     number: '01',
-    title: 'Web Development',
-    description: 'We build high-performance, scalable web applications using cutting-edge technologies that drive business growth.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Node.js'],
+    title: 'Precision Web Development',
+    description: 'We architect high-performance, conversion-led applications using a technical stack optimized for speed, security, and exponential growth.',
+    tags: ['Next.js', 'Enterprise Architecture', 'API Integration', 'Cloud Native'],
   },
   {
     number: '02',
-    title: 'UI/UX Design',
-    description: 'Our design team creates intuitive, beautiful interfaces that users love, combining aesthetics with functionality.',
-    tags: ['Figma', 'Prototyping', 'User Research', 'Design Systems'],
+    title: 'Strategic UI/UX Design',
+    description: 'User-centric design systems that reduce friction and drive user retention. We don\'t just make things look good; we make them perform.',
+    tags: ['Modular Design', 'User Psychology', 'Design Systems', 'Rapid Prototyping'],
   },
   {
     number: '03',
-    title: 'Brand Identity',
-    description: 'We develop powerful brand identities that differentiate your business and resonate deeply with your target audience.',
-    tags: ['Logo', 'Branding', 'Identity', 'Strategy'],
+    title: 'Brand Architecture',
+    description: 'Developing cohesive brand ecosystems that establish authority and resonate with high-value audiences across all touchpoints.',
+    tags: ['Visual Identity', 'Brand DNA', 'Market Positioning', 'Voice & Tone'],
   },
   {
     number: '04',
-    title: 'Digital Marketing',
-    description: 'Data-driven marketing strategies that maximize ROI, increase visibility, and convert visitors into loyal customers.',
-    tags: ['SEO', 'PPC', 'Social Media', 'Analytics'],
+    title: 'Growth Marketing',
+    description: 'Performance-driven marketing strategies engineered to maximize customer acquisition costs and drive sustainable revenue growth.',
+    tags: ['Data Intelligence', 'Conversion Optimization', 'Performance SEO', 'Paid Acquisition'],
   },
   {
     number: '05',
-    title: 'Graphic Design',
-    description: 'We create visually stunning graphics that communicate your message effectively and enhance your brand identity.',
-    tags: ['Logo', 'Branding', 'Identity', 'Strategy'],
+    title: 'Full-Spectrum Visuals',
+    description: 'Bespoke creative direction that elevates your brand\'s aesthetic to a premium tier, ensuring you stand out in saturated markets.',
+    tags: ['Creative Direction', 'Motion Graphics', '3D Visualization', 'Brand Assets'],
   },
   {
     number: '06',
-    title: 'Print & Signage',
-    description: 'We create high-quality print materials and signage that make a lasting impression.',
-    tags: ['Flyers', 'Brochures', 'Posters', 'Signage'],
+    title: 'Brand Activation',
+    description: 'Bringing your brand into the physical world through high-impact environmental design and premium print experiences.',
+    tags: ['Signage', 'Environmental Graphics', 'Premium Print', 'Exhibition Design'],
   },
 ];
 
@@ -66,14 +66,14 @@ export default function Services() {
           className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20"
         >
           <div className="max-w-2xl">
-            <motion.div variants={itemVariants} className="section-tag after:bg-black before:bg-black text-black">Our Services</motion.div>
+            <motion.div variants={itemVariants} className="section-tag after:bg-black before:bg-black text-black">Our Expertise</motion.div>
             <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight">
-              Discover Our{' '}
-              <span className="text-brand-green bg-black px-2 mt-2 inline-block">Working Formula</span>
+              Engineering Your{' '}
+              <span className="text-brand-green bg-black px-2 mt-2 inline-block">Success Formula</span>
             </motion.h2>
           </div>
           <motion.p variants={itemVariants} className="text-[#555] max-w-md leading-relaxed lg:text-right text-lg">
-            We blend strategy, design, and technology to deliver digital solutions that truly work for your business goals.
+            We merge disruptive strategy with world-class execution to build the digital infrastructure of tomorrow.
           </motion.p>
         </motion.div>
 
