@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Twitter, Linkedin, Instagram, Github, ArrowRight, Star } from 'lucide-react';
+import { Menu, X, Twitter, Linkedin, Instagram, Github, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 const navLinks = [
@@ -254,7 +254,7 @@ export default function Navbar() {
                 {navLinks.map((link, idx) => {
                   const targetId = link.href.includes('#') ? link.href.split('#')[1] : '';
                   const isActive = (location.pathname === '/' && activeSection === targetId) || (location.pathname === link.href);
-                  
+
                   return (
                     <motion.li
                       key={link.label}
