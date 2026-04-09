@@ -207,9 +207,11 @@ export default function Contact() {
           </motion.div>
         </div>
         {/* CTA Card */}
-        <motion.div variants={itemVariants} className="mt-4 bg-brand-green rounded-xl p-6">
-          <h3 className="text-black font-extrabold text-lg mb-2">Free Consultation</h3>
-          <p className="text-black/70 text-sm mb-4">Book a 30-minute strategy session with our team at no cost.</p>
+        <motion.div variants={itemVariants} className="mt-4 bg-brand-green rounded-xl p-6 flex items-center justify-between">
+          <div>
+            <h3 className="text-black font-extrabold text-xl mb-2">Free Consultation</h3>
+            <p className="text-black/70 text-sm mb-4">Book a 30-minute strategy session with our team at no cost.</p>
+          </div>
           <a
             href="mailto:adavestudio1@gmail.com"
             className="inline-flex items-center gap-2 bg-black text-white font-bold text-sm px-5 py-3 rounded-sm hover:bg-brand-dark transition-colors"

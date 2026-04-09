@@ -87,12 +87,12 @@ export default function Testimonials() {
               className={`card-light relative md:p-5 p-4 flex flex-col pt-12 overflow-hidden ${i === 1 ? 'bg-black text-white border-black' : ''}`}
             >
               {i === 1 && (
-                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/10 rounded-bl-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/50 rounded-bl-full pointer-events-none" />
               )}
 
               <StarRating rating={t.rating} />
 
-              <blockquote className={`mt-5 mb-4 text-sm leading-relaxed flex-grow ${i === 1 ? 'text-[#aaa]' : 'text-[#000]'}`}>
+              <blockquote className={`mt-5 mb-4 text-sm leading-relaxed flex-grow ${i === 1 ? 'text-black' : 'text-[#000]'}`}>
                 "{t.text}"
               </blockquote>
 
@@ -115,7 +115,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <div className={`font-bold text-sm ${i === 1 ? 'text-white' : 'text-black'}`}>{t.name}</div>
+                  <div className={`font-bold text-sm ${i === 1 ? 'text-black' : 'text-black'}`}>{t.name}</div>
                   <div className={`text-xs mt-0.5 ${i === 1 ? 'text-[#666]' : 'text-[#666]'}`}>{t.role}</div>
                 </div>
               </div>

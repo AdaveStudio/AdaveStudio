@@ -73,7 +73,7 @@ export default function Careers() {
               <motion.article
                 key={role.title}
                 variants={itemVariants}
-                className="bg-brand-dark border border-white/5 p-10 rounded-[32px] hover:border-brand-green/30 transition-all group"
+                className="bg-brand-dark border border-white/5 p-6 rounded-[32px] hover:border-brand-green/30 transition-all group"
               >
                 <div className="w-14 h-14 bg-brand-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-green group-hover:text-black transition-colors">
                   <role.icon size={28} />
