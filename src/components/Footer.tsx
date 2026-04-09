@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Twitter, Linkedin, Instagram, Github, Sparkles } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
