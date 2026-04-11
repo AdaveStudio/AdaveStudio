@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: 'Zayd Tahir',
     role: 'CEO, StudyLite.ai',
-    avatar: '/images/Zayd.png',
+    avatar: '/ZaydTahir.png',
     rating: 5,
     text: "Adave Studio redefined our digital trajectory. Their engineering and design depth resulted in a product that didn't just meet specifications—it dominated the market from day one.",
   },
@@ -101,7 +101,7 @@ export default function Testimonials() {
                   <img
                     src={t.avatar}
                     alt={`Photo of ${t.name}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     onError={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'none';
